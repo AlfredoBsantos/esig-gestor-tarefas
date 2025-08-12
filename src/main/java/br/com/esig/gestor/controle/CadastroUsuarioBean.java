@@ -24,13 +24,13 @@ public class CadastroUsuarioBean {
     public String salvar() {
         // 1. Validar se as senhas coincidem
         if (!password.equals(confirmPassword)) {
-            adicionarMensagem("Erro", "As senhas não coincidem.");
+            adicionarMensagem("Erro", "As senhas não coincidem.", FacesMessage.SEVERITY_ERROR);
             return null;
         }
 
         // 2. Validar se o nome de usuário já existe
         if (usuarioDAO.findByUsername(username) != null) {
-            adicionarMensagem("Erro", "Este nome de usuário já está em uso.");
+            adicionarMensagem("Erro", "Este nome de usuário já está em uso.", FacesMessage.SEVERITY_ERROR);
             return null;
         }
 
@@ -42,15 +42,16 @@ public class CadastroUsuarioBean {
 
         usuarioDAO.salvar(novoUsuario);
 
-        // 4. Redirecionar para a página de login com uma mensagem de sucesso
+        // 4. Redirecionar para a página de login com uma mensagem de sucesso (agora verde!)
         FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);
-        adicionarMensagem("Sucesso!", "Usuário cadastrado com sucesso. Faça o login.");
+        adicionarMensagem("Sucesso!", "Usuário cadastrado com sucesso. Faça o login.", FacesMessage.SEVERITY_INFO);
         return "login?faces-redirect=true";
     }
 
-    private void adicionarMensagem(String sumario, String detalhe) {
+    // O método agora recebe a severidade (tipo da mensagem) como parâmetro
+    private void adicionarMensagem(String sumario, String detalhe, FacesMessage.Severity severity) {
         FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_ERROR, sumario, detalhe));
+                new FacesMessage(severity, sumario, detalhe));
     }
 
     // Getters e Setters

@@ -10,6 +10,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.Date; // Import necessário
 
 @Named
 @ViewScoped
@@ -20,7 +21,6 @@ public class CadastroTarefaBean implements Serializable {
 
     private Tarefa tarefa = new Tarefa();
 
-    // Em CadastroTarefaBean.java
     public String salvar() {
         try {
             tarefaDAO.salvar(this.tarefa);
@@ -29,20 +29,23 @@ public class CadastroTarefaBean implements Serializable {
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Tarefa cadastrada com sucesso."));
             return "listagem?faces-redirect=true";
         } catch (Exception e) {
-            // LINHA DE DEBUG ADICIONADA AQUI
             e.printStackTrace();
-
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Ocorreu um erro ao cadastrar a tarefa."));
             return null;
         }
     }
 
+    // MÉTODO ADICIONADO PARA VALIDAÇÃO DE DATA
+    public Date getHoje() {
+        return new Date();
+    }
+
     public Prioridade[] getPrioridades() {
         return Prioridade.values();
     }
 
-    // Getters e Setters continuam os mesmos
+    // Getters e Setters
     public Tarefa getTarefa() {
         return tarefa;
     }

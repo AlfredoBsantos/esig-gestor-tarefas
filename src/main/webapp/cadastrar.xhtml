@@ -16,10 +16,12 @@
                 <h:outputLabel for="titulo" value="Título:" />
                 <h:inputText id="titulo" value="#{cadastroTarefaBean.tarefa.titulo}" styleClass="input-field" required="true" requiredMessage="O campo Título é obrigatório."/>
             </div>
+
             <div class="form-group">
                 <h:outputLabel for="descricao" value="Descrição:" />
                 <h:inputTextarea id="descricao" value="#{cadastroTarefaBean.tarefa.descricao}" styleClass="textarea-field" />
             </div>
+
             <div class="form-row">
                 <div class="form-group">
                     <h:outputLabel for="responsavel" value="Responsável:" />
@@ -33,12 +35,16 @@
                     </h:selectOneMenu>
                 </div>
             </div>
+
             <div class="form-group">
                 <h:outputLabel for="deadline" value="Deadline:" />
                 <h:inputText id="deadline" value="#{cadastroTarefaBean.tarefa.deadline}" styleClass="input-field" required="true" requiredMessage="O campo Deadline é obrigatório." placeholder="dd/MM/yyyy">
+
                     <f:convertDateTime type="localDate" pattern="dd/MM/yyyy" />
+
                 </h:inputText>
             </div>
+
             <div class="button-container">
                 <h:button value="Voltar" outcome="listagem" styleClass="btn btn-secondary" />
                 <h:commandButton value="Cadastrar" action="#{cadastroTarefaBean.salvar}" styleClass="btn" />
