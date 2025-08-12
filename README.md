@@ -6,10 +6,20 @@ Este projeto é uma aplicação Web desenvolvida como parte da atividade prátic
 
 A aplicação foi construída seguindo as especificações técnicas solicitadas, com foco em boas práticas, código limpo e uma experiência de usuário consistente.
 
+## 🚀 Link para a Aplicação em Produção
+
+Você pode acessar e testar a aplicação em funcionamento no seguinte link:
+
+**[https://esig-gestor-tarefas.onrender.com/](https://esig-gestor-tarefas.onrender.com/)**
+
+**Observação:** A aplicação está hospedada no plano gratuito do Render.com. O primeiro acesso pode demorar um pouco (cerca de 30 a 60 segundos) para o servidor "acordar" após um período de inatividade.
+
 ## Tecnologias Utilizadas
 
 * **Linguagem:** Java 8
 * **Servidor de Aplicação:** Apache Tomcat 9.0
+* **Containerização:** Docker
+* **Plataforma de Nuvem:** Render.com
 * **Banco de Dados:** PostgreSQL
 * **Framework Web (View):** JavaServer Faces (JSF) 2.3
 * **Injeção de Dependência:** CDI (Contexts and Dependency Injection) 2.0
@@ -33,12 +43,13 @@ A aplicação foi construída seguindo as especificações técnicas solicitadas
 
 ### Diferenciais (Itens Opcionais)
 - **(c) Utilização de JPA**: A camada de persistência foi implementada com JPA e Hibernate para o mapeamento objeto-relacional.
-- **(d) Testes de Unidade**: Foram criados testes unitários com JUnit 5 para a classe `TarefaDAO`, validando as operações de CRUD e a lógica de busca com filtros. Os testes rodam de forma isolada com um banco de dados em memória (H2).
+- **(d) Testes de Unidade**: Foram criados testes unitários com JUnit 5 para a classe `TarefaDAO`, validando as operações de CRUD e a lógica de busca. Os testes rodam de forma isolada com um banco de dados em memória (H2).
+- **(e) Publicação na Nuvem (Deploy)**: A aplicação foi empacotada com **Docker** e está em produção na plataforma **Render.com**, acessível publicamente.
 - **(f) Outros Diferenciais Implementados**:
     - **Sistema de Login Seguro**: Implementação de autenticação e cadastro de usuários. As senhas são armazenadas de forma segura no banco de dados utilizando hashing com BCrypt.
     - **Filtro de Autenticação**: Todas as páginas, exceto as de login e cadastro, são protegidas, garantindo que apenas usuários logados possam acessá-las.
     - **Paginação na Listagem**: A tabela de tarefas é paginada para melhor performance e experiência de usuário com grandes volumes de dados.
-    - **Consistência de Interface (IHC)**: As telas foram estilizadas com CSS externo para se aproximarem dos protótipos fornecidos e garantir uma experiência fluida, com redirecionamentos consistentes após as ações do usuário.
+    - **Consistência de Interface (IHC)**: As telas foram estilizadas com CSS externo para se aproximarem dos protótipos e garantir uma experiência fluida, com redirecionamentos consistentes após as ações do usuário.
 
 ## Como Executar o Projeto Localmente
 
@@ -79,6 +90,6 @@ Siga os passos abaixo para configurar e rodar a aplicação em seu ambiente loca
     * Abra seu navegador e acesse: `http://localhost:8080/esig-gestor-tarefas-1.0-SNAPSHOT/`
     * Você será redirecionado para a tela de login.
 
-### Credenciais Padrão
+### Credenciais
 
-A aplicação **não cria mais** um usuário padrão. Por favor, utilize a tela de **"Cadastre-se"** para criar sua primeira conta e acessar o sistema.
+A aplicação não cria um usuário padrão. Por favor, utilize a tela de **"Cadastre-se"** para criar sua primeira conta e acessar o sistema.
