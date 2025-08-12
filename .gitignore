@@ -1,0 +1,29 @@
+# Arquivos e pastas gerados pelo Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+build/
+
+# Arquivos e pastas do IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Arquivos de log e temporários
+*.log
+*.log.*
+*.tmp
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos do VS Code
+.vscode/
