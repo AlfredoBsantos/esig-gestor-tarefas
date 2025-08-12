@@ -36,11 +36,6 @@ public class CadastroTarefaBean implements Serializable {
         }
     }
 
-    // MÉTODO ADICIONADO PARA VALIDAÇÃO DE DATA
-    public Date getHoje() {
-        return new Date();
-    }
-
     public Prioridade[] getPrioridades() {
         return Prioridade.values();
     }

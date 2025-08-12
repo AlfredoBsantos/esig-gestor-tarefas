@@ -29,11 +29,6 @@ public class EdicaoTarefaBean implements Serializable {
         return "listagem?faces-redirect=true";
     }
 
-    // Método para validação de data
-    public Date getHoje() {
-        return new Date();
-    }
-
     public Prioridade[] getPrioridades() {
         return Prioridade.values();
     }
