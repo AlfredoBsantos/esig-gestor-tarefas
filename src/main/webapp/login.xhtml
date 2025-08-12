@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Login - Gestor de Tarefas</title>
+    <h:outputStylesheet name="css/style.css" />
+</h:head>
+<h:body>
+    <div class="container" style="max-width: 400px; margin-top: 100px;">
+        <h2>Login</h2>
+        <h:form>
+            <h:messages id="messages" styleClass="messages" errorClass="error" globalOnly="true"/>
+
+            <div class="form-group">
+                <h:outputLabel for="username" value="Usuário:" />
+                <h:inputText id="username" value="#{loginBean.username}" styleClass="input-field" required="true" />
+            </div>
+
+            <div class="form-group">
+                <h:outputLabel for="password" value="Senha:" />
+                <h:inputSecret id="password" value="#{loginBean.password}" styleClass="input-field" required="true" />
+            </div>
+
+            <div class="button-container">
+                <h:commandButton value="Entrar" action="#{loginBean.login}" styleClass="btn" />
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <span>Não tem uma conta? </span>
+                <h:link value="Cadastre-se" outcome="cadastro-usuario" />
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>

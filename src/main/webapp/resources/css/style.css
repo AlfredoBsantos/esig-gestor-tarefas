@@ -1,0 +1,206 @@
+/* Estilos Gerais */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 25px 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 900px; /* Tamanho maior para a listagem */
+}
+
+h1, h2 {
+    color: #495057;
+    font-weight: 500;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 15px;
+    margin-top: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Estilos de Formulário */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+    font-size: 14px;
+}
+
+.input-field, .select-field, .textarea-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.textarea-field {
+    height: 100px;
+    resize: vertical;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.btn:hover {
+    background-color: #e2e6ea;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+    margin-right: 10px;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Estilos de Mensagens */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.info {
+    padding: 10px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 4px;
+}
+
+.error {
+    padding: 10px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    border-radius: 4px;
+}
+
+/* Estilos Específicos da Listagem */
+.filter-section {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabela-tarefas {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #dee2e6;
+}
+
+.tabela-tarefas th, .tabela-tarefas td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-tarefas th {
+    background-color: #f8f9fa;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #495057;
+}
+
+.tabela-tarefas .col-acoes {
+    width: 200px;
+}
+
+.col-acoes a, .col-acoes .link-como-botao, .col-acoes .btn {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 5px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.col-acoes a:hover, .col-acoes .link-como-botao:hover {
+    text-decoration: underline;
+}
+
+.link-cadastro {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.link-cadastro:hover {
+    background-color: #218838;
+}
+
+.paginacao {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.paginacao .btn {
+    font-size: 14px;
+    font-weight: normal;
+}
+.paginacao span {
+    font-weight: bold;
+    color: #495057;
+}
