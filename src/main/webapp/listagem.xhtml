@@ -38,12 +38,8 @@
                         <f:selectItems value="#{listagemTarefaBean.situacoes}" var="s" itemLabel="#{s.descricao}" itemValue="#{s}"/>
                     </h:selectOneMenu>
                 </div>
-                <h:commandButton value="Buscar Tarefas" styleClass="btn" action="#{listagemTarefaBean.buscarPrimeiraPagina}">
-                    <f:ajax execute="@form" render="tabelaTarefas painelVazio paginacao messages"/>
-                </h:commandButton>
-                <h:commandButton value="Limpar" styleClass="btn" action="#{listagemTarefaBean.limparFiltros}">
-                    <f:ajax execute="@form" render="tabelaTarefas painelVazio paginacao messages"/>
-                </h:commandButton>
+                <h:commandButton value="Buscar Tarefas" styleClass="btn" action="#{listagemTarefaBean.buscarPrimeiraPagina}"><f:ajax execute="@form" render="tabelaTarefas painelVazio paginacao messages"/></h:commandButton>
+                <h:commandButton value="Limpar" styleClass="btn" action="#{listagemTarefaBean.limparFiltros}"><f:ajax execute="@form" render="tabelaTarefas painelVazio paginacao messages"/></h:commandButton>
             </fieldset>
 
             <h:dataTable id="tabelaTarefas" value="#{listagemTarefaBean.tarefas}" var="tarefa" styleClass="tabela-tarefas" rendered="#{not empty listagemTarefaBean.tarefas}">
@@ -55,21 +51,23 @@
                     <f:facet name="header">Título</f:facet>
                     <h:outputText value="#{tarefa.titulo}" />
                 </h:column>
+
+                <h:column>
+                    <f:facet name="header">Prioridade</f:facet>
+                    <h:panelGroup styleClass="prioridade-badge #{tarefa.prioridade == 'ALTA' ? 'prioridade-alta' : (tarefa.prioridade == 'MEDIA' ? 'prioridade-media' : 'prioridade-baixa')}">
+                        <h:outputText value="#{tarefa.prioridade.descricao}" />
+                    </h:panelGroup>
+                </h:column>
+
                 <h:column>
                     <f:facet name="header">Responsável</f:facet>
                     <h:outputText value="#{tarefa.responsavel}" />
                 </h:column>
                 <h:column styleClass="col-acoes">
                     <f:facet name="header">Ações</f:facet>
-                    <h:button value="Editar" outcome="editar" styleClass="link-como-botao">
-                        <f:param name="id" value="#{tarefa.numero}" />
-                    </h:button> |
-                    <h:commandLink value="Excluir" action="#{listagemTarefaBean.excluir(tarefa)}" styleClass="link-como-botao">
-                        <f:ajax execute="@this" render="@form"/>
-                    </h:commandLink> |
-                    <h:commandLink value="Concluir" action="#{listagemTarefaBean.concluir(tarefa)}" styleClass="link-como-botao" rendered="#{tarefa.situacao == 'EM_ANDAMENTO'}">
-                        <f:ajax execute="@this" render="@form"/>
-                    </h:commandLink>
+                    <h:button value="Editar" outcome="editar" styleClass="link-como-botao"><f:param name="id" value="#{tarefa.numero}" /></h:button> |
+                    <h:commandLink value="Excluir" action="#{listagemTarefaBean.excluir(tarefa)}" styleClass="link-como-botao"><f:ajax execute="@this" render="@form"/></h:commandLink> |
+                    <h:commandLink value="Concluir" action="#{listagemTarefaBean.concluir(tarefa)}" styleClass="link-como-botao" rendered="#{tarefa.situacao == 'EM_ANDAMENTO'}"><f:ajax execute="@this" render="@form"/></h:commandLink>
                 </h:column>
             </h:dataTable>
 
@@ -78,17 +76,9 @@
             </h:panelGroup>
 
             <div class="paginacao" id="paginacao">
-                <h:commandButton value="&lt;&lt; Anterior" action="#{listagemTarefaBean.paginaAnterior}"
-                                 disabled="#{not listagemTarefaBean.podeVoltar}" styleClass="btn">
-                    <f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/>
-                </h:commandButton>
-
+                <h:commandButton value="&lt;&lt; Anterior" action="#{listagemTarefaBean.paginaAnterior}" disabled="#{not listagemTarefaBean.podeVoltar}" styleClass="btn"><f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/></h:commandButton>
                 <span>#{listagemTarefaBean.descricaoPaginacao}</span>
-
-                <h:commandButton value="Próxima &gt;&gt;" action="#{listagemTarefaBean.proximaPagina}"
-                                 disabled="#{not listagemTarefaBean.podeAvancar}" styleClass="btn">
-                    <f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/>
-                </h:commandButton>
+                <h:commandButton value="Próxima &gt;&gt;" action="#{listagemTarefaBean.proximaPagina}" disabled="#{not listagemTarefaBean.podeAvancar}" styleClass="btn"><f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/></h:commandButton>
             </div>
         </h:form>
     </div>

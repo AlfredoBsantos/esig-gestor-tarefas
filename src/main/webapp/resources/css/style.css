@@ -205,3 +205,27 @@ h2 {
     font-weight: bold;
     color: #495057;
 }
+/* --- Estilos para as Prioridades --- */
+.prioridade-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    font-size: 12px;
+    display: inline-block;
+}
+
+.prioridade-alta {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.prioridade-media {
+    background-color: #ffc107; /* Amarelo */
+    color: #212529; /* Texto escuro para melhor contraste com o amarelo */
+    text-shadow: none;
+}
+
+.prioridade-baixa {
+    background-color: #28a745; /* Verde */
+}
