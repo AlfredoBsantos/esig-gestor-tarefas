@@ -21,14 +21,14 @@ Para ilustrar a arquitetura e o funcionamento do sistema, foram criados os segui
 ### Diagrama de Casos de Uso
 *Este diagrama oferece uma visão de alto nível sobre as funcionalidades do sistema e a interação do usuário com elas.*
 
-`<img width="598" height="307" alt="Diagrama de casos de uso - SIstema de Gestao de Tarefas" src="https://github.com/user-attachments/assets/0834bc99-58d9-4247-a8fa-6f9b1569773d" />
-`
+<img width="598" height="307" alt="Diagrama de casos de uso - SIstema de Gestao de Tarefas" src="https://github.com/user-attachments/assets/0834bc99-58d9-4247-a8fa-6f9b1569773d" />
+
 
 ### Diagrama de Classes
 *Este diagrama detalha a estrutura estática do projeto, mostrando as principais classes, seus atributos, métodos e relacionamentos.*
 
-`<img width="609" height="648" alt="Diagrama de Classes - Sistema de Gestao de Tarefas" src="https://github.com/user-attachments/assets/b92c3e2a-0e6a-4d39-aa7b-bfc9a7f53527" />
-`
+<img width="609" height="648" alt="Diagrama de Classes - Sistema de Gestao de Tarefas" src="https://github.com/user-attachments/assets/b92c3e2a-0e6a-4d39-aa7b-bfc9a7f53527" />
+
 
 ---
 
