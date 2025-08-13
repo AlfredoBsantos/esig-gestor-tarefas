@@ -43,26 +43,10 @@
             </fieldset>
 
             <h:dataTable id="tabelaTarefas" value="#{listagemTarefaBean.tarefas}" var="tarefa" styleClass="tabela-tarefas" rendered="#{not empty listagemTarefaBean.tarefas}">
-                <h:column>
-                    <f:facet name="header">Número</f:facet>
-                    <h:outputText value="#{tarefa.numero}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Título</f:facet>
-                    <h:outputText value="#{tarefa.titulo}" />
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Prioridade</f:facet>
-                    <h:panelGroup styleClass="prioridade-badge #{tarefa.prioridade == 'ALTA' ? 'prioridade-alta' : (tarefa.prioridade == 'MEDIA' ? 'prioridade-media' : 'prioridade-baixa')}">
-                        <h:outputText value="#{tarefa.prioridade.descricao}" />
-                    </h:panelGroup>
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Responsável</f:facet>
-                    <h:outputText value="#{tarefa.responsavel}" />
-                </h:column>
+                <h:column><f:facet name="header">Número</f:facet><h:outputText value="#{tarefa.numero}" /></h:column>
+                <h:column><f:facet name="header">Título</f:facet><h:outputText value="#{tarefa.titulo}" /></h:column>
+                <h:column><f:facet name="header">Prioridade</f:facet><h:panelGroup styleClass="prioridade-badge #{tarefa.prioridade == 'ALTA' ? 'prioridade-alta' : (tarefa.prioridade == 'MEDIA' ? 'prioridade-media' : 'prioridade-baixa')}"><h:outputText value="#{tarefa.prioridade.descricao}" /></h:panelGroup></h:column>
+                <h:column><f:facet name="header">Responsável</f:facet><h:outputText value="#{tarefa.responsavel}" /></h:column>
                 <h:column styleClass="col-acoes">
                     <f:facet name="header">Ações</f:facet>
                     <h:button value="Editar" outcome="editar" styleClass="link-como-botao"><f:param name="id" value="#{tarefa.numero}" /></h:button> |
@@ -76,9 +60,17 @@
             </h:panelGroup>
 
             <div class="paginacao" id="paginacao">
-                <h:commandButton value="&lt;&lt; Anterior" action="#{listagemTarefaBean.paginaAnterior}" disabled="#{not listagemTarefaBean.podeVoltar}" styleClass="btn"><f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/></h:commandButton>
+                <h:commandLink value="&lt;&lt; Anterior" action="#{listagemTarefaBean.paginaAnterior}"
+                               styleClass="btn btn-link #{!listagemTarefaBean.podeVoltar ? 'ui-state-disabled' : ''}">
+                    <f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/>
+                </h:commandLink>
+
                 <span>#{listagemTarefaBean.descricaoPaginacao}</span>
-                <h:commandButton value="Próxima &gt;&gt;" action="#{listagemTarefaBean.proximaPagina}" disabled="#{not listagemTarefaBean.podeAvancar}" styleClass="btn"><f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/></h:commandButton>
+
+                <h:commandLink value="Próxima &gt;&gt;" action="#{listagemTarefaBean.proximaPagina}"
+                               styleClass="btn btn-link #{!listagemTarefaBean.podeAvancar ? 'ui-state-disabled' : ''}">
+                    <f:ajax execute="@this" render="tabelaTarefas painelVazio paginacao"/>
+                </h:commandLink>
             </div>
         </h:form>
     </div>

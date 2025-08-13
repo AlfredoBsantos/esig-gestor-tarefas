@@ -229,3 +229,9 @@ h2 {
 .prioridade-baixa {
     background-color: #28a745; /* Verde */
 }
+
+.btn-link {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+}
