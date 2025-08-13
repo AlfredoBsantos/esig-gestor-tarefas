@@ -101,7 +101,7 @@ Para facilitar a avaliação, siga os cenários de teste abaixo para verificar a
 ### Passos
 1.  **Clone o Repositório:**
     ```shell
-    git clone [https://github.com/seu-usuario/esig-gestor-tarefas.git](https://github.com/seu-usuario/esig-gestor-tarefas.git)
+    git clone [https://github.com/AlfredoBsantos/esig-gestor-tarefas.git](https://github.com/AlfredoBsantos/esig-gestor-tarefas.git)
     cd esig-gestor-tarefas
     ```
 2.  **Configure o Banco de Dados:**
